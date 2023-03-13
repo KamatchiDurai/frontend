@@ -1,0 +1,11 @@
+<h2 *ngIf="authService.getIsLoggedIn()"> Logged In User: {{authService.getUserRole()}}</h2>
+<p>user works!</p>
+
+<button type="button" class="btn btn-info" (click)="onGetAddress()"> Get Address</button>
+<p *ngIf="addressResponse">Address Response: {{ addressResponse | json }}</p>
+
+<br>
+<br>
+
+<a routerLink="/home"> Go back home</a>
+

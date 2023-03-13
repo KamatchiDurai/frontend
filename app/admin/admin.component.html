@@ -1,0 +1,9 @@
+<h2 *ngIf="authService.getIsLoggedIn()"> Logged In User: {{authService.getUserRole()}}</h2>
+<p>admin works!</p>
+
+<button type="button" class="btn btn-info" (click)="onGetGrades()"> Get Grades</button>
+<p *ngIf="gradesResponse">Grades Response: {{ gradesResponse | json }}</p>
+
+<br>
+<br>
+<a routerLink="/home"> Go back home</a>

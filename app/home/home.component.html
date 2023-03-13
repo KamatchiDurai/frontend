@@ -1,0 +1,16 @@
+<h1>Student  Portal</h1>
+<h2 *ngIf="authService.getIsLoggedIn()"> Logged In User: {{authService.getUserRole()}}</h2>
+<nav>
+    <ul>
+      <li *ngIf="authService.getUserRole() === 'admin'"><a routerLink="/admin">Admin</a></li>
+      <li *ngIf="authService.getUserRole() === 'user'"><a routerLink="/user">User</a></li>
+      <li *ngIf="!authService.getIsLoggedIn()"><a routerLink="/login">Login</a></li>
+    </ul>
+  </nav>
+
+<button *ngIf="authService.getIsLoggedIn()" class="btn btn-secondary" (click)="authService.logout()">Logout</button>
+<br>
+<br>
+<button type="button" class="btn btn-info" (click)="onGetAccount()">Get Account</button>
+<p *ngIf="accountResponse">Account Response: {{ accountResponse | json }}</p>
+
